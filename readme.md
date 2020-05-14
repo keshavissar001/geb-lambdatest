@@ -1,71 +1,69 @@
 <a href="https://www.automation.lambdatest.com">![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)</a>
 
-# Geb Lambdatest Plugin Sample using Gradle Project
-
-## Running Geb Automation Tests On LambdaTest Selenium Grid
+# Geb Tutorial Using Gradle Project On Online Selenium Grid
 
 Based on Groovy, Geb is a web testing automation framework. It is build as a wrapper over Selenium WebDriver which makes it ideal for automated browser testing. Geb automation testing framework can help you automate cross browser testing over every browser that is supported by Selenium WebDriver. Geb automation testing framework offers excellent features for web testing, screen scraping, and more. What makes Geb unique is the way it queries your HTML pages, it does so by offering the jQuery-like syntax. Also, it provides built-in support for the Page Object pattern.
 
 LambdaTest integration with Geb will help you execute your Geb test automation scripts on our online Selenium Grid of 2000+ real browsers to ensure your web application renders well on as many browsers as you are targeting to test.
 
+![altext](https://cdn.lambdatest.com/support/docs/wp-content/uploads/2019/12/Running-Geb-Tests-1.jpg)
 
-## Prerequisites To Run Geb automation Scripts On Our Selenium Grid
+## Prerequisites To Run Geb automation Scripts Over Online Selenium Grid
 
 ### Environment Setup 
 
-### 1. Java Installation
+### 1. Install Java For Your Operating System
    
-   i.   For Windows :
+*  For Windows:
    
    You can download Java for Windows from [here](http://www.java.com/en/download/manual.jsp)
    
    Run the installer and follow the setup wizard to install Java.
    
-   create a new JAVA_HOME environment variable and set variable value as path value to JDK folder.
-   
-   #### This is Windows environment variable location :
+   Create a new JAVA_HOME environment variable and set variable value as path value to JDK folder. You can do this by going to
    Control Panel > All Control Panel Items > System > Advanced system settings > Environment Variables
    
    ![altext](https://github.com/keshavissar001/selenide-testng-sample/blob/keshavissar001-patch-1/Img1.png)
    
-   ii. For Linux :
+* For Linux:
    
-   use this command :
+   Run the below command in your terminal:
    ```
    sudo apt-get install openjdk-8-jre
    ```
-   iii. For Mac
+* For macOS:
    
-   Java should already be present on Mac OS X by default
+  Java should already be present on Mac OS X by default.
    
-   ### 2. Maven Installation
+### 2. Maven Installation
    
-   Install Maven from [here](https://maven.apache.org/install.html)
+  Install Maven from [here](https://maven.apache.org/install.html)
    
-### 3 Setup
+### 3. LambdaTest Authentication Credentials
+   
+  Make sure you have your LambdaTest credentials with you to run test automation scripts with Jest on LambdaTest Selenium Grid. You can obtain these credentials from the [LambdaTest Automation Dashboard](https://automation.lambdatest.com/) or through [LambdaTest Profile](https://accounts.lambdatest.com/detail/profile).
+  Set LambdaTest Username and Access Key in environment variables.
+* For Linux/macOS:
+ `export LT_USERNAME="YOUR_USERNAME"
+  export LT_ACCESS_KEY="YOUR ACCESS KEY"`
 
-   You can download the file. To do this click on “Clone or download” button. You can download zip file.
-   
-   Right click on this zip file and extract files in your desired location.
+* For Windows:
+ `set LT_USERNAME="YOUR_USERNAME"
+  set LT_ACCESS_KEY="YOUR ACCESS KEY"`
 
-   Go to “geb-lambdatest-master” folder and copy its path.
-   Open command prompt and run :
+## Setting Up The First Project For Geb Automation Testing 
+
+   **Step 1:** Clone this [GitHub repository for Geb framework](https://github.com/LambdaTest/geb-lambdatest). To clone the file, run the below command in your terminal or command prompt:
    
-    cd <path> (that you have copied)
-    
-    (please ignore "<" , ">" symbols)
-    
+   `git clone https://github.com/LambdaTest/webdriverio-selenium-sample.git` 
+ 
+   **Step 2:** After cloning, you'll have a zip file downloaded in your system. Right click on the zip file and extract files in your desired location.
+   
+   **Step 3:** Open terminal or command prompt and bring the pointer to the same folder where you extracted the cloned repository. 
 
 ![altext](https://github.com/keshavissar001/images/blob/master/SetPathGeb.png)
 
-
-To clone the file, click on “Clone or download” button and copy the link.
-
-	Then open the command prompt in the folder you want to clone the file. Run the command:
-
-      git clone <paste link here> 
-      
- Add your lambdatest `username` and `accessKey` to the `./build.gradle` in “geb-lambdatest-master” in account{} section [For Lambdatest Credentials, Go to Lambdatest Profile Page][account_details] 
+  **Step 4:** Under the folder **“geb-lambdatest-master”**, add your LambdaTest `username` and `accessKey` to the `./build.gradle` in “geb-lambdatest-master” in account{} section [For Lambdatest Credentials, Go to Lambdatest Profile Page][account_details] 
       
 This is `./build.gradle` file :
 
@@ -135,14 +133,12 @@ lambdaTest {
 }
 
 ```
-### 5. Running your tests
+## Running Geb Automation Tests On LambdaTest Selenium Grid
 
-This is an example of incorporating Geb Lambdatest Plugin into a Gradle build.
-The build is setup to work with Firefox Windows combination on Lambdatest Automation Hub. 
-To use it with different capabilities, please have a look at  `src/test/resources/GebConfig.groovy` file.
+This is an example of incorporating Geb LambdaTest Plugin into a Gradle build.
+The build is setup to work with a combination of Mozilla Firefox & Windows 10 on Lambdatest Selenium Automation Grid. To use it with different browser + OS combination you'll need to alter the `src/test/resources/GebConfig.groovy` file.
 
-
-This is the GebConfig.groovy file :
+This is the `GebConfig.groovy` file :
 
 ```
 
