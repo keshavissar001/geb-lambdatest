@@ -136,7 +136,10 @@ lambdaTest {
 ## Running Geb Automation Tests On LambdaTest Selenium Grid
 
 This is an example of incorporating Geb LambdaTest Plugin into a Gradle build.
-The build is setup to work with a combination of Mozilla Firefox & Windows 10 on Lambdatest Selenium Automation Grid. To use it with different browser + OS combination you'll need to alter the `src/test/resources/GebConfig.groovy` file.
+The build is setup to work with a combination of Mozilla Firefox & Windows 10 on Lambdatest Selenium Automation Grid.
+Lets start with a simple test first. This geb script below tests whether the expected title is same as that of given page.
+
+To use it with different browser + OS combination you'll need to alter the `src/test/resources/GebConfig.groovy` file.
 
 This is the `GebConfig.groovy` file :
 
@@ -190,7 +193,7 @@ environments {
 
 ```
 
-Following tests will run with above mentioned capabilities.
+Following test will run with above mentioned capabilities.
 
 This is the LambdaTestSpec.groovy file :
 
@@ -213,7 +216,7 @@ class LambdaTestSpec extends GebReportingSpec {
 
 ```
 
-This is the LambdaTestPage.groovy file :
+This is the LambdaTestPage.groovy file that is used in test file :
 
 ```
 import geb.Page
@@ -227,7 +230,7 @@ class LambdaTestPage extends Page {
 
 ```
 
-This is the LambdaTestResultPage.groovy file :
+This is the LambdaTestResultPage.groovy file that is used in test file :
 
 ```
 
